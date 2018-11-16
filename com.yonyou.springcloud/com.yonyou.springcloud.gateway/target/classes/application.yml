@@ -1,0 +1,21 @@
+server:
+  port: 8779
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+      - id: api-a
+        uri: http://127.0.0.1:3001/helloA?name=aa
+        predicates:
+          - Path=/api-a/**
+      - id: api-b
+        uri: http://127.0.0.1:3002/helloB?name=bb
+        predicates:
+          - Path=/api-b/**
+eureka:
+  client: 
+    service-url: 
+      defaultZone: http://127.0.0.1:3333/eureka/

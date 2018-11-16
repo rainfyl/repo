@@ -1,0 +1,16 @@
+server:
+  port: 3002
+
+spring:
+  application:
+    name: spring-cloud-demoB
+
+#注册中心指向start    
+eureka:
+  instance:
+    instance-id: spring-cloud-demoB
+    appname: ${spring.application.name}
+  client: 
+    service-url: 
+      defaultZone: http://127.0.0.1:3333/eureka/
+#注册中心指向end

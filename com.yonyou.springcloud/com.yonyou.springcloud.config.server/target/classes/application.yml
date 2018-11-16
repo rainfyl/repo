@@ -1,0 +1,21 @@
+server:
+  port: 8780
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          password: ********
+          searchPaths: respo
+          uri: https://gitee.com/fox9916/springCloudConfig
+          username: fox9916
+eureka:
+  #instance:
+   # instance-id: spring-cloud-demoA
+    #appname: ${spring.application.name}
+  client: 
+    service-url: 
+      defaultZone: http://127.0.0.1:3333/eureka/

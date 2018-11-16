@@ -1,0 +1,15 @@
+server:
+  port: 4000
+
+spring:
+  application:
+    name: spring-cloud-ribbon
+
+eureka:
+  instance:
+    instance-id: spring-cloud-ribbon
+    appname: ${spring.application.name}
+  client: 
+    service-url: 
+      defaultZone: http://127.0.0.1:3333/eureka/
+
